@@ -3,7 +3,8 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction</title>
+        <title></title>
+        <meta name="robots" content="noindex" />
 
 
         <!-- Custom HTML head -->
@@ -81,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html" class="active">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Travail dans l'éditeur</li><li class="chapter-item expanded "><a href="edition/se_deplacer.html"><strong aria-hidden="true">1.</strong> Se déplacer</a></li><li class="chapter-item expanded "><a href="edition/inserer_texte.html"><strong aria-hidden="true">2.</strong> Insérer du texte</a></li><li class="chapter-item expanded "><a href="edition/remplacer_texte.html"><strong aria-hidden="true">3.</strong> Remplacer du texte</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Travail dans l'éditeur</li><li class="chapter-item expanded "><a href="edition/se_deplacer.html"><strong aria-hidden="true">1.</strong> Se déplacer</a></li><li class="chapter-item expanded "><a href="edition/inserer_texte.html"><strong aria-hidden="true">2.</strong> Insérer du texte</a></li><li class="chapter-item expanded "><a href="edition/remplacer_texte.html"><strong aria-hidden="true">3.</strong> Remplacer du texte</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -168,15 +169,106 @@ a <a href="https://github.com/rust-lang/mdBook/pulls">pull request</a>.</p>
 <h2 id="license"><a class="header" href="#license">License</a></h2>
 <p>The mdBook source and documentation are released under
 the <a href="https://www.mozilla.org/MPL/2.0/">Mozilla Public License v2.0</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="se-déplacer"><a class="header" href="#se-déplacer">Se déplacer</a></h1>
+<h2 id="se-déplacer-dun-caractère"><a class="header" href="#se-déplacer-dun-caractère">Se déplacer d'un caractère</a></h2>
+<ul>
+<li><strong>l</strong> (à droite de <strong>k</strong>) se déplace vers la droite.</li>
+<li><strong>h</strong> (à gauche de <strong>j</strong>) se déplace vers la gauche.</li>
+<li><strong>f</strong><em>x</em> déplace le curseur sur l'occurrence suivante du caractère <em>x</em> dans la ligne.</li>
+<li><strong>F</strong><em>x</em> déplace le curseur sur l'occurrence précédente du caractère <em>x</em> dans la ligne.</li>
+<li><strong>t</strong><em>x</em> déplace le curseur sur le caractère précédent l'occurrence du caractère <em>x</em> dans la ligne.</li>
+<li><strong>T</strong><em>x</em> déplace le curseur sur le caractère suivant l'occurrence du caractère <em>x</em> dans la ligne.</li>
+</ul>
+<h2 id="se-déplacer-au-début-dun-mot"><a class="header" href="#se-déplacer-au-début-dun-mot">Se déplacer au début d'un mot</a></h2>
+<ul>
+<li><strong>w</strong> (word) vers la droite. <strong>Note</strong> : certains caractères spéciaux comptent comme des mots (ex : <strong>*blabla*</strong> comptent comme trois mots).</li>
+<li><strong>W</strong> (Word) vers la droite. <strong>Note</strong> : les caractères spéciaux comptent avec le mot accroché (ex : <strong>*blabla*</strong> compte comme un mot).</li>
+<li><strong>b</strong> (backward) vers la gauche. <strong>Note</strong> : certains caractères spéciaux comptent comme des mots (ex : <strong>*blabla*</strong> comptent comme trois mots).</li>
+<li><strong>B</strong> (Backward) vers la gauche. <strong>Note</strong> : les caractères spéciaux comptent avec le mot accroché (ex : <strong>*blabla*</strong> compte comme un mot).</li>
+</ul>
+<h2 id="se-déplacer-en-fin-de-mot"><a class="header" href="#se-déplacer-en-fin-de-mot">Se déplacer en fin de mot</a></h2>
+<ul>
+<li><strong>e</strong> (end) vers la droite. Comme pour <strong>w</strong> mais en fin de mot.</li>
+<li><strong>E</strong> (End) vers la droite. Comme pour <strong>W</strong> mais en fin de mot.</li>
+</ul>
+<h2 id="se-déplacer-en-début-ou-fin-de-ligne"><a class="header" href="#se-déplacer-en-début-ou-fin-de-ligne">Se déplacer en début ou fin de ligne</a></h2>
+<ul>
+<li><strong>$</strong> se déplace en fin de ligne.</li>
+<li><strong>^</strong> se déplace en sur le premier caractère non blanc d'une ligne.</li>
+<li><strong>+</strong> ou <strong>↵</strong> (touche <strong>plus</strong> ou <strong>entrée</strong>) saute une ligne et se déplace sur le premier caractère non blanc d'une ligne.</li>
+<li><strong>-</strong> se met sur la ligne au dessus et se déplace sur le premier caractère non blanc.</li>
+<li><strong>0</strong> (zéro) se déplace en début de ligne (les caractères blancs ne changent rien).</li>
+</ul>
+<h2 id="se-déplacer-dans-un-endroit-précis-dune-ligne"><a class="header" href="#se-déplacer-dans-un-endroit-précis-dune-ligne">Se déplacer dans un endroit précis d'une ligne</a></h2>
+<ul>
+<li><strong>n|</strong> se déplace sur le caractère correspondant à la colonne ne de la ligne. Si n est trop grand, va en fin de ligne.</li>
+</ul>
+<h2 id="se-déplacer-parmi-les-lignes"><a class="header" href="#se-déplacer-parmi-les-lignes">Se déplacer parmi les lignes</a></h2>
+<ul>
+<li><strong>j</strong> ou <strong>↓</strong> se déplace d'une ligne en dessous.</li>
+<li><strong>k</strong> se déplace d'une ligne au dessus.</li>
+<li><strong>gg</strong> se déplace tout en début de texte.</li>
+<li><strong>G</strong> se déplace tout à la fin du texte.</li>
+<li>n<strong>G</strong> se déplace à la ligne n du texte. On peut afficher le numéro de la ligne où on se trouve avec la commande <strong>:nu</strong> (number). Même chose avec la commande <strong>CTRL-G</strong> qui affiche aussi le pourcentage de texte au dessus du curseur et le numéro de colonne.</li>
+</ul>
+<h2 id="se-déplacer-dans-une-phrase"><a class="header" href="#se-déplacer-dans-une-phrase">Se déplacer dans une phrase</a></h2>
+<ul>
+<li><strong>(</strong> déplace le curseur au début de la phrase en cours (la phrase d'avant se finit avec les caractères suivants : <strong>?</strong>, <strong>.</strong>, <strong>!</strong>.</li>
+<li><strong>)</strong> déplace le curseur au début de la phrase suivante (la phrase suivante est précédée par les caractères suivants : <strong>?</strong>, <strong>.</strong>, <strong>!</strong>.</li>
+</ul>
+<h2 id="se-déplacer-dans-un-paragraphe"><a class="header" href="#se-déplacer-dans-un-paragraphe">Se déplacer dans un paragraphe</a></h2>
+<ul>
+<li><strong>{</strong> déplace le curseur au début du paragraphe courant (le paragraphe d'avant finit par une ligne blanche).</li>
+<li><strong>}</strong> déplace le curseur au début du paragraphe suivant (le paragraphe suivant est précédé par une ligne blanche).</li>
+</ul>
+<h2 id="multiplier-les-déplacements"><a class="header" href="#multiplier-les-déplacements">Multiplier les déplacements</a></h2>
+<p>On peut ajouter un nombre devant chaque commande de déplacement(sauf <strong>0</strong>). Par exemple <strong>2w</strong> provoque le déplacement du curseur de 2 mots.</p>
+<h2 id="se-déplacer-dans-lécran"><a class="header" href="#se-déplacer-dans-lécran">Se déplacer dans l'écran</a></h2>
+<ul>
+<li><strong>H</strong> déplace le curseur en haut de l'écran visible.</li>
+<li>n<strong>H</strong> déplace le curseur en haut de l'écran et descend de n lignes en comptant la première.</li>
+<li><strong>M</strong> déplace le curseur au milieu de l'écran visible.</li>
+<li><strong>L</strong> déplace le curseur en bas de l'écran visible.</li>
+<li>n<strong>L</strong> déplace le curseur en bas de l'écran visible et remonte de n lignes en comptant la dernière.</li>
+</ul>
+<h2 id="déplacer-lécran-scrolling"><a class="header" href="#déplacer-lécran-scrolling">Déplacer l'écran (scrolling)</a></h2>
+<p><strong>Note :</strong> pour toutes les commandes si dessous, essayer les lettres en minuscule si ça ne fonctionne pas (ex : <strong>CTRL-f</strong> à la place de <strong>CTRL-F</strong>).</p>
+<ul>
+<li><strong>CTRL-F</strong> (Forward)(essayer sans majuscule si ça ne fonctionne pas) fait défiler d'un écran vers le bas.</li>
+<li><strong>CTRL-B</strong> (Backward) fait défiler d'un écran vers le haut.</li>
+<li><strong>CTRL-D</strong> (Down) fait défiler d'un demi écran vers le bas.</li>
+<li><strong>CTRL-U</strong> (Up) fait défiler d'un demi écran vers le haut.</li>
+<li><strong>CTRL-E</strong> fait défiler l'écran d'une ligne d'écran vers le haut. </li>
+<li><strong>CTRL-Y</strong> fait défiler l'écran d'une ligne d'écran vers le bas. </li>
+<li><strong>z↵</strong> (appuyer sur <strong>z</strong> puis la touche <strong>entrée</strong>) fait défiler la ligne courante vers le haut de l'écran sans bouger le curseur (le curseur se retrouve en haut de l'écran).</li>
+<li><strong>z.</strong> fait défiler la ligne courante vers le centre de l'écran sans bouger le curseur (le curseur se retrouve en milieu d'écran).</li>
+<li><strong>z-</strong> fait défiler la ligne courante vers le bas de l'écran sans bouger le curseur.</li>
+</ul>
+<h2 id="se-déplacer-dans-une-recherche"><a class="header" href="#se-déplacer-dans-une-recherche">Se déplacer dans une recherche</a></h2>
+<p>Voir la section correspondante dans la documentation.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="insérer-du-texte"><a class="header" href="#insérer-du-texte">Insérer du texte</a></h1>
+<h2 id="commande-insert"><a class="header" href="#commande-insert">Commande Insert</a></h2>
+<p><strong>i</strong> (insert = insérer) permet d'insérer du texte à gauche du curseur. Il faudra appuyer sur <strong>ESC</strong> pour sortir du mode <strong>--insert--</strong>. Le mode insertion correspond à une édition dans les éditeurs de texte classiques.</p>
+<h2 id="commande-append"><a class="header" href="#commande-append">Commande Append</a></h2>
+<p><strong>a</strong> (append = ajouter) permet d'insérer du texte à droite du curseur. Il faudra appuyer sur <strong>ESC</strong> pour sortir du mode <strong>--insert--</strong> (l'appui sur <strong>a</strong> fait passer en mode insertion de texte).</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="remplacer-du-texte"><a class="header" href="#remplacer-du-texte">Remplacer du texte</a></h1>
+<h2 id="remplacer-un-caractère"><a class="header" href="#remplacer-un-caractère">Remplacer un caractère</a></h2>
+<ul>
+<li><strong>r</strong> (replace = remplacer) permet de remplacer un caractère <strong>sans</strong> passer en mode insertion.</li>
+<li><strong>R</strong> (Replace = Remplacer) permet de se mettre en mode <strong>overstrike</strong>, c'est à dire que le curseur remplace tout ce qui suit jusqu'en fin de ligne si on saisi du texte (un caractère ou plus). Dans ce cas on passe en mode <strong>-- REPLACE --</strong> jusqu'à l'appui sur la touche <strong>ESC</strong>.</li>
+</ul>
+<h2 id="remplacer-un-mot"><a class="header" href="#remplacer-un-mot">Remplacer un mot</a></h2>
+<ul>
+<li><strong>cw</strong> (change word = changer mot) commence par effacer le mot à partir de la position du curseur (jusqu'à la fin du mot) puis permet son remplacement. Un appui sur <strong>w</strong> permet de se placer en début de mot avant son remplacement entier.</li>
+<li><strong>c3w</strong> comme <strong>cw</strong> mais permet le remplacement de trois mot par le nombre de caractères ou mots que l'on veut.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next" href="edition/se_deplacer.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -185,9 +277,6 @@ the <a href="https://www.mozilla.org/MPL/2.0/">Mozilla Public License v2.0</a>.<
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next" href="edition/se_deplacer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
@@ -226,6 +315,11 @@ the <a href="https://www.mozilla.org/MPL/2.0/">Mozilla Public License v2.0</a>.<
 
         <!-- Custom JS scripts -->
 
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
 
     </body>
 </html>
