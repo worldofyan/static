@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Ajout fichiers (git add --all)..."
-git add --all
+git add .
 echo "Job done !"
 echo "======================================================"
 echo ""
