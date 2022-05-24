@@ -1,4 +1,4 @@
 #ignorer fichier sh update
-gitupdate.sh
+*.sh
 #ignorer fichier replace pour les caractères spéciaux
 replace.script
